@@ -3,14 +3,15 @@
 ## Phase 1: Proposal Prototype (No Database)
 
 ### Foundation
-- [ ] Initialize Next.js project with Tailwind and TypeScript
-- [ ] Set up mock data structure (JSON files for recipes and users)
+- [x] Initialize Next.js project with Tailwind and TypeScript
+- [x] Set up mock data structure (JSON files for recipes and users)
 - [ ] Configure visual components for high-fidelity proposal
 
 ### Public Layer
-- [ ] Implement Landing Page (Hero section, Teaser video)
-- [ ] Create FAQ Section with interactive elements
+- [x] Implement Landing Page (Hero section, Teaser video)
+- [x] Create FAQ Section with interactive elements
 - [ ] Build Business Presentation Registration Form (Simulated submission)
+
 
 ### Authentication & Gating (Simulated)
 - [ ] Implement Mock Login screen
