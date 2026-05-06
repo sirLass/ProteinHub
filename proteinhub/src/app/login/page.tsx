@@ -1,10 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { loginUser } from "@/lib/mockAuth";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -12,12 +15,22 @@ export default function LoginPage() {
     // Simulate login delay
     setTimeout(() => {
       setIsLoading(false);
-      alert("Demo Login: In a production environment, this would authenticate against a database.");
+      loginUser(); // Save to localStorage
+      router.push("/dashboard");
     }, 1000);
   };
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-zinc-50 px-6 dark:bg-black">
+      <Link 
+        href="/" 
+        className="absolute left-8 top-8 flex items-center gap-2 text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+      >
+        <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Back to home
+      </Link>
       <div className="w-full max-w-sm">
         <div className="mb-10 text-center">
           <Link href="/" className="inline-flex items-center gap-2">

@@ -1,8 +1,16 @@
 "use client";
 
 import Link from "next/link";
+import { isAuthenticated } from "@/lib/mockAuth";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    setIsLoggedIn(isAuthenticated());
+  }, []);
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-200/50 bg-white/70 backdrop-blur-md dark:border-zinc-800/50 dark:bg-black/70">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
@@ -20,9 +28,15 @@ export default function Navbar() {
           <Link href="#faq" className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">
             FAQ
           </Link>
-          <Link href="/login" className="rounded-full bg-zinc-900 px-5 py-2 text-sm font-semibold text-white transition-all hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200">
-            Login
-          </Link>
+          {isLoggedIn ? (
+            <Link href="/dashboard" className="rounded-full bg-zinc-900 px-5 py-2 text-sm font-semibold text-white transition-all hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200">
+              Go to Dashboard
+            </Link>
+          ) : (
+            <Link href="/login" className="rounded-full bg-zinc-900 px-5 py-2 text-sm font-semibold text-white transition-all hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200">
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </nav>
