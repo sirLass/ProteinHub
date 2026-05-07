@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import { useState } from "react";
+import { useState, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 
-export default function PresentationPage() {
+function PresentationContent() {
   const [hasWatched, setHasWatched] = useState(false);
   const searchParams = useSearchParams();
   const isConfirmed = searchParams.get("confirmed") === "true";
@@ -115,5 +115,15 @@ export default function PresentationPage() {
         </div>
       </footer>
     </div>
+  );
+}
+
+import Link from "next/link";
+
+export default function PresentationPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-white dark:bg-black flex items-center justify-center text-zinc-500">Loading...</div>}>
+      <PresentationContent />
+    </Suspense>
   );
 }
