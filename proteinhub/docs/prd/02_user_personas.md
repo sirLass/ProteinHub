@@ -20,7 +20,7 @@
 ### 4.3 Persona C --- The Active Distributor
 **Active Distributor Profile**
 - Has been running the business for 1+ months
-- Needs: Access to updated recipes, costing adjustments, new product modules
+- Needs: Access to updated product information, costing adjustments, new product modules
 - Pays annual subscription fee to maintain platform access
 - Goal: Grow their business, reference materials, access new content as it releases
 

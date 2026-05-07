@@ -8,7 +8,7 @@ The platform operates on three access tiers:
 | :--- | :--- | :--- |
 | Tier 1 --- Public | Guests / Prospects | Business overview, FAQ, teaser video, business presentation registration |
 | Tier 2 --- Registered | Presentation Attendees | Schedule selection, confirmation, pre-presentation info page |
-| Tier 3 --- Member | Paid Distributors | Full module access, recipe library, costing tools, community board, chatbot escalation |
+| Tier 3 --- Member | Paid Distributors | Full module access, product library, costing tools, community board, chatbot escalation |
 
 ## 7. Non-Functional Requirements
 
@@ -38,7 +38,7 @@ The platform operates on three access tiers:
 
 ## 12. Assumptions & Constraints
 
-- **Content Readiness**: Owner will supply all video content, recipes, and module materials.
+- **Content Readiness**: Owner will supply all video content, product guides, and module materials.
 - **Budget**: Modest; platform should use proven, cost-effective technology stack.
 - **Owner Involvement**: Owner will review and approve content structure before Phase 1 launch.
 - **Internet Access**: Target distributors have reliable mobile internet access.

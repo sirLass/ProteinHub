@@ -5,23 +5,23 @@ import { loginUser } from "@/lib/mockAuth";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-export default function LoginPage() {
+export default function RegisterPage() {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    // Simulate login delay
+    // Simulate registration delay
     setTimeout(() => {
       setIsLoading(false);
-      loginUser(); // Save to localStorage
+      loginUser(); // Mock auto-login after register
       router.push("/dashboard");
     }, 1000);
   };
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-zinc-50 px-6 dark:bg-black">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-zinc-50 px-6 py-12 dark:bg-black">
       <Link 
         href="/" 
         className="absolute left-8 top-8 flex items-center gap-2 text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
@@ -31,6 +31,7 @@ export default function LoginPage() {
         </svg>
         Back to home
       </Link>
+      
       <div className="w-full max-w-sm">
         <div className="mb-10 text-center">
           <Link href="/" className="inline-flex items-center gap-2">
@@ -40,10 +41,10 @@ export default function LoginPage() {
             </span>
           </Link>
           <h1 className="mt-6 text-xl font-semibold text-zinc-900 dark:text-white">
-            Welcome back
+            Start Your Business Journey
           </h1>
           <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-            Login to access your distributor dashboard
+            Join the network of independent fitness entrepreneurs.
           </p>
         </div>
 
@@ -53,24 +54,12 @@ export default function LoginPage() {
             className="flex w-full items-center justify-center gap-3 rounded-xl border border-zinc-200 bg-white py-3 text-sm font-semibold text-zinc-900 transition-all hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900 dark:text-white dark:hover:bg-zinc-800"
           >
             <svg className="h-5 w-5" viewBox="0 0 24 24">
-              <path
-                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                fill="#4285F4"
-              />
-              <path
-                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                fill="#34A853"
-              />
-              <path
-                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
-                fill="#FBBC05"
-              />
-              <path
-                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-                fill="#EA4335"
-              />
+              <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+              <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+              <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+              <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
             </svg>
-            Sign in with Google
+            Sign up with Google
           </button>
 
           <div className="relative">
@@ -79,15 +68,37 @@ export default function LoginPage() {
             </div>
             <div className="relative flex justify-center text-xs uppercase">
               <span className="bg-zinc-50 px-2 text-zinc-500 dark:bg-black dark:text-zinc-400">
-                Or continue with email
+                Or fill in details
               </span>
             </div>
           </div>
         </div>
 
         <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-xs font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">
+                First Name
+              </label>
+              <input
+                type="text"
+                required
+                className="mt-1 block w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm focus:border-zinc-900 focus:outline-none focus:ring-1 focus:ring-zinc-900 dark:border-zinc-800 dark:bg-zinc-900 dark:text-white dark:focus:border-white dark:focus:ring-white"
+              />
+            </div>
+            <div>
+              <label className="block text-xs font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">
+                Last Name
+              </label>
+              <input
+                type="text"
+                required
+                className="mt-1 block w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm focus:border-zinc-900 focus:outline-none focus:ring-1 focus:ring-zinc-900 dark:border-zinc-800 dark:bg-zinc-900 dark:text-white dark:focus:border-white dark:focus:ring-white"
+              />
+            </div>
+          </div>
           <div>
-            <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+            <label className="block text-xs font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">
               Email Address
             </label>
             <input
@@ -98,14 +109,9 @@ export default function LoginPage() {
             />
           </div>
           <div>
-            <div className="flex items-center justify-between">
-              <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-                Password
-              </label>
-              <a href="#" className="text-xs font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">
-                Forgot password?
-              </a>
-            </div>
+            <label className="block text-xs font-medium text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">
+              Password
+            </label>
             <input
               type="password"
               required
@@ -113,20 +119,26 @@ export default function LoginPage() {
               className="mt-1 block w-full rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm focus:border-zinc-900 focus:outline-none focus:ring-1 focus:ring-zinc-900 dark:border-zinc-800 dark:bg-zinc-900 dark:text-white dark:focus:border-white dark:focus:ring-white"
             />
           </div>
+          
+          <div className="pt-2">
+            <p className="text-[10px] text-zinc-500 leading-relaxed text-center">
+              By signing up, you agree to our <a href="#" className="underline">Terms of Service</a> and <a href="#" className="underline">Privacy Policy</a>.
+            </p>
+          </div>
 
           <button
             type="submit"
             disabled={isLoading}
-            className="flex w-full items-center justify-center rounded-xl bg-zinc-900 py-3 text-sm font-bold text-white transition-all hover:bg-zinc-800 disabled:opacity-50 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
+            className="flex w-full items-center justify-center rounded-xl bg-zinc-900 py-4 text-sm font-bold text-white shadow-xl shadow-zinc-200 transition-all hover:bg-zinc-800 disabled:opacity-50 dark:bg-white dark:text-black dark:shadow-none dark:hover:bg-zinc-200"
           >
-            {isLoading ? "Signing in..." : "Sign In"}
+            {isLoading ? "Creating account..." : "Reserve My Slot"}
           </button>
         </form>
 
         <p className="mt-8 text-center text-sm text-zinc-600 dark:text-zinc-400">
-          Not a distributor yet?{" "}
-          <Link href="/register" className="font-bold text-zinc-900 hover:underline dark:text-white">
-            Join Us
+          Already a distributor?{" "}
+          <Link href="/login" className="font-bold text-zinc-900 hover:underline dark:text-white">
+            Sign In
           </Link>
         </p>
       </div>

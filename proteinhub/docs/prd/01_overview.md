@@ -2,7 +2,7 @@
 
 ## 1. Executive Summary
 
-This document outlines the product requirements for **Protein Hub**, a web-based Distributor Training & Membership Platform --- a system designed to streamline how Protein Hub onboards, trains, and retains its distributor network.
+This document outlines the product requirements for **Protein Hub**, a web-based Distributor Training & Membership Platform --- a system designed to empower distributors to build their own independent businesses through founder-led mentorship and a premium product supply line.
 
 The platform addresses a recurring operational problem: the business owner spends excessive time on repetitive inquiries, manual training, and coordination across different distributor demographics (Gen X, Millennials, Gen Z). The proposed solution centralizes all educational resources, automates routine communication, and enforces a structured onboarding progression --- freeing the owner to focus on business growth and mentorship.
 
@@ -25,8 +25,8 @@ The platform addresses a recurring operational problem: the business owner spend
 | Generational gap causes communication friction | Gen Z/Millennials avoid direct conversation; Gen X expects direct access |
 | Training materials are scattered (WhatsApp, Facebook, drive) | Distributors forget content; no way to track completion or understanding |
 | No way to filter serious vs. casual inquiries | Owner wastes time on unqualified prospects who never convert |
-| Business presentation scheduling is manual | No automated registration for Tue/Thu/Sat sessions |
-| Recipes and costing guides are not centralized | Distributors forget information and cannot self-serve |
+| Business presentation scheduling is manual | No automated registration for Tue/Thu/Sat trainings |
+| Product and costing guides are not centralized | Distributors forget information and cannot self-serve |
 
 ### 2.2 Root Cause Analysis
 

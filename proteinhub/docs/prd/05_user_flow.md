@@ -13,5 +13,5 @@ The full journey from discovery to active distributor status:
 7. **Conversion**: Decides to proceed → pays PHP 2,500 onboarding/training fee.
 8. **Onboarding**: Receives login credentials → gains access to Member Portal.
 9. **Training**: Completes Module 1 (sequential unlocking) → unlocks Module 2.
-10. **Operation**: Runs their own business using the Protein Hub system and recipes.
+10. **Operation**: Runs their own business using the Protein Hub system and materials.
 11. **Retention**: Pays annual subscription renewal to maintain portal access.

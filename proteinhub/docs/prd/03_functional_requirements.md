@@ -43,14 +43,14 @@
 #### 6.3.1 Module-Based Training System
 - Sequential modules: Module 1 must be 100% completed before unlocking Module 2
 - Video progress tracking --- no skipping; system detects fast-forwarding
-- Each module includes: video lessons, downloadable guides, recipe files, costing sheets
+- Each module includes: video lessons, downloadable guides, product files, costing sheets
 - Progress dashboard showing: % completion per module, last active date
 - Completion certificate or badge per module (motivational milestone)
 
-#### 6.3.2 Recipe & Resource Library
-- Searchable library of all recipes organized by category
-- Each recipe includes: ingredients, costing breakdown, preparation instructions
-- New recipes added by admin are immediately visible to all active members
+#### 6.3.2 Product & Resource Library
+- Searchable library of all products organized by category
+- Each product includes: specification, costing breakdown, marketing instructions
+- New products added by admin are immediately visible to all active members
 - Costing adjustment tool: allows distributors to input local prices and auto-calculate margins
 
 #### 6.3.3 Subscription & Access Control

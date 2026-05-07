@@ -12,7 +12,7 @@
 
 ### Phase 2 --- Growth Features (Months 4–6)
 - Full multi-module training system.
-- Recipe and resource library with search.
+- Product and resource library with search.
 - Costing adjustment calculator.
 - Referral link system with tracking.
 - Admin reporting dashboard (conversions, churn, stats).

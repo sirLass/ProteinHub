@@ -1,13 +1,13 @@
 "use client";
 
-const faqs = [
+export const faqs = [
   {
     q: "How much do I need to start?",
-    a: "You can start as a distributor with an initial onboarding and training fee of PHP 2,500. This gives you full access to our system, recipes, and training portal.",
+    a: "You can start as a distributor with an initial onboarding and training fee of PHP 2,500. This gives you full access to our system, product materials, and direct business training from the founder of Protein Hub.",
   },
   {
     q: "Is this a franchise?",
-    a: "No, Protein Hub operates as a low-cost distribution model. You run your own business under your own brand, utilizing our proven system and high-quality product recipes.",
+    a: "No, Protein Hub operates as a low-cost distribution model. You run your own independent business under your own brand, utilizing our proven system and high-quality product materials.",
   },
   {
     q: "Do I need technical skills?",

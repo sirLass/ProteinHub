@@ -15,6 +15,7 @@ export default function Footer() {
           </div>
           
           <div className="flex gap-6">
+            <a href="https://www.facebook.com/proteinblendsph" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Facebook</a>
             <a href="#" className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Privacy</a>
             <a href="#" className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">Terms</a>
           </div>
