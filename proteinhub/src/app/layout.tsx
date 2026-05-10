@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import React from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Protein Hub | Start Your Own Business",
     description: "Launch your business with a proven roadmap and premium products.",
-    url: "https://proteinhub.netlify.app",
+    url: "https://proteinhub0.netlify.app",
     siteName: "Protein Hub",
     locale: "en_US",
     type: "website",
