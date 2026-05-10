@@ -66,24 +66,24 @@ function RegisterForm() {
       
       <div className="w-full max-w-xl">
         {/* Progress Indicator */}
-        <div className="mb-12 flex items-center justify-center gap-4">
+        <div className="mb-8 sm:mb-12 flex items-center justify-center gap-2 sm:gap-4">
           {steps.map((s, i) => (
             <div key={s.id} className="flex items-center">
-              <div className={`flex h-10 w-10 items-center justify-center rounded-full border-2 transition-all duration-300 ${
+              <div className={`flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-full border-2 transition-all duration-300 ${
                 step >= s.id 
                   ? "border-zinc-900 bg-zinc-900 text-white dark:border-white dark:bg-white dark:text-black" 
                   : "border-zinc-200 bg-white text-zinc-400 dark:border-zinc-800 dark:bg-zinc-900"
               }`}>
                 {step > s.id ? (
-                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="h-4 w-4 sm:h-6 sm:w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 ) : (
-                  <span className="text-sm font-bold">{s.id}</span>
+                  <span className="text-xs sm:text-sm font-bold">{s.id}</span>
                 )}
               </div>
               {i < steps.length - 1 && (
-                <div className={`h-[2px] w-12 mx-2 transition-all duration-500 ${
+                <div className={`h-[2px] w-8 sm:w-12 mx-1 sm:mx-2 transition-all duration-500 ${
                   step > s.id ? "bg-zinc-900 dark:bg-white" : "bg-zinc-200 dark:bg-zinc-800"
                 }`} />
               )}
@@ -91,16 +91,16 @@ function RegisterForm() {
           ))}
         </div>
 
-        <div className="mb-10 text-center">
-          <h1 className="text-2xl font-bold text-zinc-900 dark:text-white">
+        <div className="mb-8 sm:mb-10 text-center">
+          <h1 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white">
             {step === 1 && "Start Your Journey"}
             {step === 2 && "Tell Us More"}
             {step === 3 && "Final Step"}
           </h1>
-          <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
-            {step === 1 && "We just need some basic info to get started."}
-            {step === 2 && "Help us understand your background better."}
-            {step === 3 && "Pick a time that works best for your orientation."}
+          <p className="mt-2 text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">
+            {step === 1 && "Basic info to get started."}
+            {step === 2 && "Help us understand your background."}
+            {step === 3 && "Pick a time that works for you."}
           </p>
         </div>
 

@@ -24,13 +24,13 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-200/50 bg-white/70 backdrop-blur-md dark:border-zinc-800/50 dark:bg-black/70">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        <div className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-lg bg-zinc-900 dark:bg-white" />
-          <span className="text-xl font-bold tracking-tight text-zinc-900 dark:text-white">
+      <div className="mx-auto flex h-16 sm:h-20 max-w-7xl items-center justify-between px-4 sm:px-6">
+        <Link href="/" className="flex items-center gap-2 group">
+          <div className="h-7 w-7 sm:h-9 sm:w-9 rounded-lg bg-zinc-900 transition-transform group-hover:scale-105 dark:bg-white" />
+          <span className="text-lg sm:text-xl font-bold tracking-tight text-zinc-900 dark:text-white">
             Protein Hub
           </span>
-        </div>
+        </Link>
         
         {/* Desktop Links */}
         <div className="hidden items-center gap-4 lg:gap-8 lg:flex">
