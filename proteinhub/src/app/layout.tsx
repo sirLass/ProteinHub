@@ -13,8 +13,27 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Protein Hub | Distributor Training & Membership Platform",
-  description: "The all-in-one platform for Protein Hub distributors. Onboard, train, and manage your business network with ease.",
+  title: "Protein Hub | Premium Distributor Training & Membership Platform",
+  description: "Join Protein Hub and launch your own protein distribution business. Our all-in-one platform provides founder-led mentorship, business training, and network management tools.",
+  keywords: ["protein hub", "business training", "distributor platform", "entrepreneurship", "protein distribution", "founder mentorship"],
+  authors: [{ name: "Protein Hub Team" }],
+  openGraph: {
+    title: "Protein Hub | Start Your Own Business",
+    description: "Launch your business with a proven roadmap and premium products.",
+    url: "https://proteinhub.netlify.app",
+    siteName: "Protein Hub",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Protein Hub | Distributor Platform",
+    description: "The all-in-one platform for Protein Hub distributors.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 export default function RootLayout({
