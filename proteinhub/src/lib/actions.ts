@@ -45,6 +45,6 @@ export async function registerUser(formData: FormData) {
   }
 
   // Set session or cookie here if needed
-  // For mock auth, we just redirect
-  redirect("/presentation?confirmed=true");
+  // Redirect to distributor dashboard as requested
+  redirect("/dashboard/distributor");
 }

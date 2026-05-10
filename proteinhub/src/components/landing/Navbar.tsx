@@ -3,14 +3,24 @@
 import Link from "next/link";
 import { isAuthenticated } from "@/lib/mockAuth";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
+ 
+   useEffect(() => {
+     setIsLoggedIn(isAuthenticated());
+   }, []);
 
-  useEffect(() => {
-    setIsLoggedIn(isAuthenticated());
-  }, []);
+  const handleReserve = () => {
+    if (isLoggedIn) {
+      router.push("/register");
+    } else {
+      router.push("/login?reason=no_account");
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-200/50 bg-white/70 backdrop-blur-md dark:border-zinc-800/50 dark:bg-black/70">
@@ -42,9 +52,12 @@ export default function Navbar() {
               <Link href="/login" className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">
                 Login
               </Link>
-              <Link href="/register" className="rounded-full bg-zinc-900 px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-zinc-200 transition-all hover:bg-zinc-800 hover:shadow-xl dark:bg-white dark:text-black dark:shadow-none dark:hover:bg-zinc-200">
+              <button 
+                onClick={handleReserve}
+                className="rounded-full bg-zinc-900 px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-zinc-200 transition-all hover:bg-zinc-800 hover:shadow-xl dark:bg-white dark:text-black dark:shadow-none dark:hover:bg-zinc-200"
+              >
                 Reserve Now!
-              </Link>
+              </button>
             </div>
           )}
         </div>
@@ -74,7 +87,15 @@ export default function Navbar() {
                 <Link href="/dashboard" className="block w-full rounded-2xl bg-zinc-900 py-4 text-center font-bold text-white dark:bg-white dark:text-black">Go to Dashboard</Link>
               ) : (
                 <>
-                  <Link href="/register" onClick={() => setIsMenuOpen(false)} className="block w-full rounded-2xl bg-zinc-900 py-4 text-center font-bold text-white dark:bg-white dark:text-black">Reserve Now!</Link>
+                  <button 
+                    onClick={() => {
+                      setIsMenuOpen(false);
+                      handleReserve();
+                    }} 
+                    className="block w-full rounded-2xl bg-zinc-900 py-4 text-center font-bold text-white dark:bg-white dark:text-black"
+                  >
+                    Reserve Now!
+                  </button>
                   <Link href="/login" onClick={() => setIsMenuOpen(false)} className="block w-full border border-zinc-200 py-4 text-center font-bold text-zinc-900 rounded-2xl dark:border-zinc-800 dark:text-white">Login</Link>
                 </>
               )}

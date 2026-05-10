@@ -2,14 +2,23 @@
 
 import Link from "next/link";
 import { loginUser } from "@/lib/mockAuth";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useState, useEffect } from "react";
 
 export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  
   const router = useRouter();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    if (searchParams.get("reason") === "no_account") {
+      setErrorMsg("No account detected. You need to login first to reserve a slot.");
+    }
+  }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,10 +33,8 @@ export default function LoginPage() {
       if (email === "admin@example.com") {
         router.push("/dashboard/admin");
       } else {
-        // Fallback or test account
-        if (!email) setEmail("test@example.com");
-        if (!password) setPassword("123456");
-        router.push("/dashboard/distributor");
+        // Redirect to registration form after login as requested
+        router.push("/register");
       }
     }, 1000);
   };
@@ -48,7 +55,7 @@ export default function LoginPage() {
       setTimeout(() => {
         setIsLoading(false);
         loginUser();
-        router.push("/dashboard/distributor");
+        router.push("/register");
       }, 800);
     }
   };
@@ -79,6 +86,17 @@ export default function LoginPage() {
             Login to your dashboard
           </p>
         </div>
+
+        {errorMsg && (
+          <div className="mb-6 rounded-xl bg-red-50 p-4 text-xs font-bold text-red-600 dark:bg-red-900/20 dark:text-red-400 animate-in fade-in slide-in-from-top-2 duration-300">
+            <div className="flex items-center gap-2">
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              {errorMsg}
+            </div>
+          </div>
+        )}
 
         <div className="space-y-3 mb-8">
           <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 text-center mb-4">Quick Access for Testing</p>

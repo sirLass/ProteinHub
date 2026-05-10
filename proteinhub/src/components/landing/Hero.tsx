@@ -1,9 +1,19 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-
+import { useRouter } from "next/navigation";
+import { isAuthenticated } from "@/lib/mockAuth";
 export default function Hero() {
+  const router = useRouter();
+
+  const handleReserve = () => {
+    if (isAuthenticated()) {
+      router.push("/register");
+    } else {
+      router.push("/login?reason=no_account");
+    }
+  };
+
   return (
     <section className="relative overflow-hidden pt-32 pb-16 md:pt-48 md:pb-32">
       {/* Background Decor */}
@@ -24,12 +34,12 @@ export default function Hero() {
             Launch <strong className="text-zinc-900 dark:text-white">your own business</strong> with a proven roadmap. Leverage our premium product line and <strong className="text-zinc-900 dark:text-white">direct founder-led mentorship</strong> to master the blueprint for scaling any independent venture.
           </p>
           <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="/register"
+            <button
+              onClick={handleReserve}
               className="h-14 flex items-center rounded-2xl bg-zinc-900 px-10 text-base font-bold text-white shadow-xl transition-all hover:scale-105 active:scale-95 dark:bg-white dark:text-black"
             >
               Reserve Your Slot
-            </Link>
+            </button>
             <button className="h-14 rounded-2xl border border-zinc-200 bg-white/50 px-10 text-base font-semibold text-zinc-900 backdrop-blur-sm transition-all hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-white dark:hover:bg-zinc-900">
               Learn More
             </button>
