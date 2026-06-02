@@ -1,10 +1,47 @@
 "use client";
 
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { isAuthenticated } from "@/lib/mockAuth";
+import { useEffect, useState } from "react";
+
+const heroStories = [
+  {
+    name: "Signature Protein Blend",
+    story:
+      "Positioned as the everyday confidence drink for busy professionals who want strength and consistency.",
+    image: "/product_protein_powder_1778123206280.png",
+  },
+  {
+    name: "Ready-to-Drink Shakes",
+    story:
+      "Shared as the on-the-go wellness habit for students, parents, and creators building better routines.",
+    image: "/product_rtd_shake_bottle_1778123315766.png",
+  },
+  {
+    name: "Performance Hydration",
+    story:
+      "Framed as a simple recovery ritual for active lifestyles, team events, and weekend community fitness.",
+    image: "/product_hydration_drink_1778123449418.png",
+  },
+  {
+    name: "Energy & Focus Blends",
+    story:
+      "Presented as a productivity ally for people chasing goals, side hustles, and long-term growth.",
+    image: "/product_energy_focus_container_1778123581067.png",
+  },
+];
+
 export default function Hero() {
   const router = useRouter();
+  const [activeStory, setActiveStory] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setActiveStory((prev) => (prev + 1) % heroStories.length);
+    }, 3500);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   const handleReserve = () => {
     if (isAuthenticated()) {
@@ -15,59 +52,86 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden pt-32 pb-16 md:pt-48 md:pb-32">
-      {/* Background Decor */}
-      <div className="absolute top-0 left-1/2 -z-10 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-zinc-50 opacity-50 blur-3xl dark:bg-zinc-900/30" />
-      
-      <div className="container mx-auto px-4 sm:px-6 text-center">
-        <div className="mx-auto max-w-4xl relative">
-          <div className="mb-4 sm:mb-6 inline-flex items-center rounded-full border border-zinc-200 bg-white/50 px-3 py-1 text-[10px] sm:text-xs font-bold uppercase tracking-widest text-zinc-500 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-900/50">
-             Official Distributor Portal
+    <section id="hero" className="relative min-h-screen overflow-hidden border-b border-zinc-100 pt-28 md:pt-32">
+      <div className="absolute left-1/2 top-0 -z-10 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-zinc-100 blur-3xl" />
+
+      <div className="container mx-auto grid min-h-[calc(100vh-7rem)] items-center gap-16 px-6 py-10 lg:grid-cols-2">
+        <div>
+          <div className="mb-6 inline-flex items-center rounded-full border border-zinc-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-widest text-zinc-600">
+            Distributor Training Platform
           </div>
-          <h1 className="text-3xl font-extrabold tracking-tight text-zinc-900 sm:text-6xl lg:text-7xl dark:text-white leading-[1.15] sm:leading-[1.1]">
-            Fueling the Future of <br className="hidden sm:block" />
-            <span className="bg-gradient-to-r from-zinc-900 to-zinc-500 bg-clip-text text-transparent dark:from-white dark:to-zinc-500">
-              Protein Distribution
-            </span>
+          <h1 className="max-w-2xl text-4xl font-extrabold leading-tight tracking-tight text-zinc-900 sm:text-6xl">
+            Build Your Own Health & Wellness Business
           </h1>
-          <p className="mt-6 sm:mt-8 text-sm sm:text-lg leading-relaxed text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto px-2 sm:px-0">
-            Launch <strong className="text-zinc-900 dark:text-white">your own business</strong> with a proven roadmap. Leverage our premium product line and <strong className="text-zinc-900 dark:text-white">direct founder-led mentorship</strong> to master the blueprint for scaling any independent venture.
+          <p className="mt-7 max-w-xl text-lg leading-relaxed text-zinc-600">
+            Learn the proven system used by successful distributors to attract customers, build teams, and create long-term income.
           </p>
-          <div className="mt-8 sm:mt-12 flex flex-col items-stretch sm:items-center justify-center gap-3 sm:flex-row sm:gap-4 px-4 sm:px-0">
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-zinc-500">
+            Designed to inspire every generation, from Gen Z to boomers: customer-first stories that naturally lead to business growth.
+          </p>
+
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <button
               onClick={handleReserve}
-              className="h-12 sm:h-14 flex items-center justify-center rounded-2xl bg-zinc-900 px-8 sm:px-10 text-sm sm:text-base font-bold text-white shadow-xl transition-all hover:scale-105 active:scale-95 dark:bg-white dark:text-black"
+              className="inline-flex h-14 items-center justify-center rounded-2xl bg-zinc-900 px-9 text-base font-bold text-white transition hover:bg-zinc-800"
             >
-              Reserve Your Slot
+              Start Training
             </button>
-            <button className="h-12 sm:h-14 rounded-2xl border border-zinc-200 bg-white/50 px-8 sm:px-10 text-sm sm:text-base font-semibold text-zinc-900 backdrop-blur-sm transition-all hover:bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-white dark:hover:bg-zinc-900">
-              Learn More
-            </button>
+            <a
+              href="#success-stories"
+              className="inline-flex h-14 items-center justify-center rounded-2xl border border-zinc-300 bg-white px-9 text-base font-semibold text-zinc-800 transition hover:bg-zinc-100"
+            >
+              Watch Success Stories
+            </a>
           </div>
         </div>
-        
-        {/* Mock Teaser Video Placeholder with more WOW factor */}
-        <div className="mt-24 relative mx-auto max-w-5xl group">
-          <div className="absolute -inset-1 rounded-[32px] bg-gradient-to-r from-zinc-200 to-zinc-100 opacity-20 blur-xl transition-opacity group-hover:opacity-40 dark:from-zinc-800 dark:to-zinc-900" />
-          <div className="relative aspect-video w-full items-center justify-center rounded-[32px] border border-zinc-200/50 bg-white/80 p-2 shadow-2xl backdrop-blur-sm dark:border-zinc-800/50 dark:bg-zinc-900/80 overflow-hidden">
-            <div className="h-full w-full rounded-[24px] bg-zinc-50 dark:bg-zinc-950 flex flex-col items-center justify-center gap-6 relative group/video">
-              {/* This is where the teaser video or image would go */}
-              <div className="absolute inset-0 opacity-10 grayscale hover:grayscale-0 transition-all duration-700">
-                 {/* Placeholder for background image */}
+
+        <div className="relative">
+          <div className="relative overflow-hidden rounded-3xl border border-zinc-200 bg-white p-5 shadow-xl sm:p-6">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="h-56 overflow-hidden rounded-2xl bg-zinc-100 sm:h-64">
+                <img
+                  src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80"
+                  alt="Successful distributor lifestyle"
+                  className="h-full w-full object-cover transition duration-700 hover:scale-105"
+                />
               </div>
-              
-              <div className="z-10 flex flex-col items-center gap-4">
-                 <div className="flex h-20 w-20 items-center justify-center rounded-full bg-zinc-900 text-white dark:bg-white dark:text-black shadow-2xl transition-transform hover:scale-110 cursor-pointer">
-                   <svg fill="currentColor" viewBox="0 0 24 24" className="ml-1 h-10 w-10">
-                     <path d="M8 5v14l11-7z" />
-                   </svg>
-                 </div>
-                 <div className="text-center">
-                    <p className="text-sm font-bold text-zinc-900 dark:text-white">Watch the 3-minute Intro</p>
-                    <p className="text-xs text-zinc-500 mt-1 uppercase tracking-widest font-semibold">How Protein Blends PH Works</p>
-                 </div>
+              <div className="h-56 overflow-hidden rounded-2xl bg-zinc-100 sm:h-64">
+                <img
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80"
+                  alt="Team training event"
+                  className="h-full w-full object-cover transition duration-700 hover:scale-105"
+                />
               </div>
             </div>
+
+            <div className="mt-5 rounded-2xl border border-zinc-200 bg-zinc-50 p-5 shadow-sm sm:mt-6 sm:p-6">
+              <p className="text-sm font-semibold uppercase tracking-widest text-zinc-500">Story spotlight</p>
+              <div className="mt-4 flex items-start gap-4 sm:gap-5">
+                <img
+                  src={heroStories[activeStory].image}
+                  alt={heroStories[activeStory].name}
+                  className="h-20 w-20 rounded-xl border border-zinc-200 bg-white object-cover sm:h-24 sm:w-24"
+                />
+                <div>
+                  <p className="text-lg font-bold leading-snug text-zinc-900 sm:text-xl">{heroStories[activeStory].name}</p>
+                  <p className="mt-2 text-base leading-relaxed text-zinc-700 sm:text-lg">{heroStories[activeStory].story}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-7 flex justify-center gap-3">
+            {heroStories.map((story, index) => (
+              <button
+                key={story.name}
+                onClick={() => setActiveStory(index)}
+                aria-label={`View story for ${story.name}`}
+                className={`h-3.5 rounded-full transition-all ${
+                  activeStory === index ? "w-10 bg-zinc-900" : "w-3.5 bg-zinc-300"
+                }`}
+              />
+            ))}
           </div>
         </div>
       </div>

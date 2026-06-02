@@ -1,9 +1,13 @@
 import Navbar from "@/components/landing/Navbar";
 import Hero from "@/components/landing/Hero";
+import Trust from "@/components/landing/Trust";
+import TrainingSystem from "@/components/landing/TrainingSystem";
+import SuccessStories from "@/components/landing/SuccessStories";
 import Products from "@/components/landing/Products";
-import Features from "@/components/landing/Features";
 import About from "@/components/landing/About";
+import Community from "@/components/landing/Community";
 import FAQ from "@/components/landing/FAQ";
+import FinalCTA from "@/components/landing/FinalCTA";
 import Footer from "@/components/landing/Footer";
 import Chatbot from "@/components/landing/Chatbot";
 
@@ -13,10 +17,14 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <Trust />
+        <TrainingSystem />
+        <SuccessStories />
         <About />
         <Products />
-        <Features />
+        <Community />
         <FAQ />
+        <FinalCTA />
       </main>
       <Footer />
       <Chatbot />

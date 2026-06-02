@@ -54,8 +54,9 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-bold text-zinc-900 dark:text-white uppercase tracking-widest mb-6">Navigation</h4>
             <ul className="space-y-4">
-              <li><a href="#about" className="text-sm text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#products" className="text-sm text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors">Premium Blends</a></li>
+              <li><a href="#training-system" className="text-sm text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors">Training System</a></li>
+              <li><a href="#success-stories" className="text-sm text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors">Success Stories</a></li>
+              <li><a href="#products" className="text-sm text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors">Product Stories</a></li>
               <li><a href="/login" className="text-sm text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors">Distributor Login</a></li>
             </ul>
           </div>
