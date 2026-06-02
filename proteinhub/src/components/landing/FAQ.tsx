@@ -3,15 +3,15 @@
 export const faqs = [
   {
     q: "How much do I need to start?",
-    a: "You can start as a distributor with an initial onboarding and training fee of PHP 2,500. This gives you full access to our system, product materials, and direct business training from the founder of Protein Hub.",
+    a: "You can start as a distributor with an onboarding and training fee of PHP 2,500. This unlocks access to the Protein Hub training system, product storytelling assets, and mentorship support.",
   },
   {
-    q: "Is this a franchise?",
-    a: "No, Protein Hub operates as a low-cost distribution model. You run your own independent business under your own brand, utilizing our proven system and high-quality product materials.",
+    q: "Is this focused on products or business training?",
+    a: "Both, but training comes first. We prioritize customer acquisition, team-building, and leadership so distributors can build sustainable businesses.",
   },
   {
-    q: "Do I need technical skills?",
-    a: "Not at all. The platform is designed to be simple and mobile-friendly, accessible to anyone with basic smartphone literacy.",
+    q: "Can any age group succeed in this model?",
+    a: "Yes. Protein Hub's system is designed to be simple, mobile-friendly, and story-led, making it approachable for Gen Z, professionals, parents, and boomers.",
   },
 ];
 

@@ -34,14 +34,17 @@ export default function Navbar() {
         
         {/* Desktop Links */}
         <div className="hidden items-center gap-4 lg:gap-8 lg:flex">
-          <Link href="#about" className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">
-            About Us
+          <Link href="#training-system" className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">
+            Training
+          </Link>
+          <Link href="#success-stories" className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">
+            Success Stories
           </Link>
           <Link href="#products" className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">
             Products
           </Link>
-          <Link href="#features" className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">
-            Services
+          <Link href="#community" className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white">
+            Community
           </Link>
           {isLoggedIn ? (
             <Link href="/dashboard" className="rounded-full bg-zinc-900 px-5 py-2 text-sm font-semibold text-white transition-all hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-zinc-200">
@@ -79,9 +82,10 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="border-t border-zinc-100 bg-white p-6 lg:hidden dark:border-zinc-800 dark:bg-zinc-900">
           <div className="flex flex-col gap-4">
-            <Link href="#about" onClick={() => setIsMenuOpen(false)} className="text-lg font-semibold text-zinc-900 dark:text-white">About Us</Link>
+            <Link href="#training-system" onClick={() => setIsMenuOpen(false)} className="text-lg font-semibold text-zinc-900 dark:text-white">Training</Link>
+            <Link href="#success-stories" onClick={() => setIsMenuOpen(false)} className="text-lg font-semibold text-zinc-900 dark:text-white">Success Stories</Link>
             <Link href="#products" onClick={() => setIsMenuOpen(false)} className="text-lg font-semibold text-zinc-900 dark:text-white">Products</Link>
-            <Link href="#features" onClick={() => setIsMenuOpen(false)} className="text-lg font-semibold text-zinc-900 dark:text-white">Services</Link>
+            <Link href="#community" onClick={() => setIsMenuOpen(false)} className="text-lg font-semibold text-zinc-900 dark:text-white">Community</Link>
             <div className="pt-4 border-t border-zinc-50 dark:border-zinc-800 space-y-3">
               {isLoggedIn ? (
                 <Link href="/dashboard" className="block w-full rounded-2xl bg-zinc-900 py-4 text-center font-bold text-white dark:bg-white dark:text-black">Go to Dashboard</Link>
